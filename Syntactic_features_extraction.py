@@ -16,11 +16,23 @@ print("------------------NOUN PHRASES---------------\n")
 for chunk in doc.noun_chunks:
     print('Noun Phrase:', chunk.text, ',', 'NP Head:', chunk.root.text, "\n")
 
-# Word Tokenization and token's features
+# Word Tokenization and tokens' features
 print("------------------TOKENS---------------\n")
+tok_id = []
 for token in doc:
-    print("Token:", token.text, ',', "Lemma:", token.lemma_, ','"POS tag:", token.pos_, ',', "Token Dependency:",
+    tok_id.append(token.i)
+    print("Token ID", token.i, ',', "Token:", token.text, ',', "Lemma:", token.lemma_, ','"POS tag:", token.pos_, ',',
+          "Token Dependency Tag:",
           token.dep_, ',', "Token Head:", token.head, "\n")
+
+# Extracting token dependents
+print("------------------TOKEN DEPENDENTS---------------\n")
+for index in tok_id:
+    tok_dep = []
+    for tokens in doc:
+        if index == tokens.head.i:
+            tok_dep.append(tokens.text)
+    print("Token ID:", index, ',', "Dependents:", tok_dep, "\n")
 
 # Entity Recognition
 print("-----------------ENTITIES---------------\n")
