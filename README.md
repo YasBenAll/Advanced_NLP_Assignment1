@@ -1,5 +1,7 @@
 ## Code for extracting syntactic features of an English text.
 
+Use an IDE like VScode or Pycharm to run the code. Jupyter Notebook does not work*
+
 ## Running Instructions:
 Step 1: Libraries installation.
 >pip install -r requirements.txt
