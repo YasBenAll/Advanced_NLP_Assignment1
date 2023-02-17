@@ -9,10 +9,10 @@
 
 ## Running Instructions:
 Step 1: Libraries installation.
->pip install nltk\n
->pip install spacy \n
->pip install benepar\n
->pip install protobuf==3.20\n
+-pip install nltk
+-pip install spacy 
+-pip install benepar
+-pip install protobuf==3.20
 
 Step 2: Spacy English package installation.
 >python -m spacy download en_core_web_sm
