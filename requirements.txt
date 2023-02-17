@@ -1,0 +1,5 @@
+nltk
+spacy
+benepar
+torch == 1.13.1
+protobuf == 3.20
