@@ -17,6 +17,7 @@ Step 1: Libraries installation.
 Step 2: Spacy English package installation.
 >python -m spacy download en_core_web_sm
 
+Step 3: The code is ready to run. In order to view the dependency tree follow http://localhost:5000/ link.
 
 
 
