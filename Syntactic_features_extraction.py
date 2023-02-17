@@ -19,8 +19,10 @@ for chunk in doc.noun_chunks:
 # Word Tokenization and tokens' features
 print("------------------TOKENS---------------\n")
 tok_id = []
+tok_text = []
 for token in doc:
     tok_id.append(token.i)
+    tok_text.append(token.text)
     print("Token ID", token.i, ',', "Token:", token.text, ',', "Lemma:", token.lemma_, ','"POS tag:", token.pos_, ',',
           "Token Dependency Tag:",
           token.dep_, ',', "Token Head:", token.head, "\n")
@@ -30,6 +32,8 @@ print("------------------TOKEN DEPENDENTS---------------\n")
 for index in tok_id:
     tok_dep = []
     for tokens in doc:
+        if tok_text[index] == tokens.text:
+            continue
         if index == tokens.head.i:
             tok_dep.append(tokens.text)
     print("Token ID:", index, ',', "Dependents:", tok_dep, "\n")
@@ -49,3 +53,4 @@ print(parse_tree.pretty_print())
 # Dependencies Tree
 options = {"collapse_punct": False, "add_lemma": True}
 displacy.serve(doc, style="dep", options=options)
+
